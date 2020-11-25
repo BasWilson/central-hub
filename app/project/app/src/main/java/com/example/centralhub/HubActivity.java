@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class HubActivity extends AppCompatActivity {
 
-    Button profileButton, categoryButton;
+    Button profileButton, categoryButton, puntenshopButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +22,15 @@ public class HubActivity extends AppCompatActivity {
     private void setup() {
         profileButton = (Button)findViewById(R.id.profileButton);
         categoryButton = (Button)findViewById(R.id.catogoryButton);
+        puntenshopButton = (Button)findViewById(R.id.puntenShopButton);
         if (profileButton != null) {
             profileButton.setOnClickListener(this::openProfile);
         }
         if (categoryButton != null) {
             categoryButton.setOnClickListener(this::openCategories);
+        }
+        if (puntenshopButton != null) {
+            puntenshopButton.setOnClickListener(this::openPuntenshop);
         }
     }
 
@@ -37,6 +41,11 @@ public class HubActivity extends AppCompatActivity {
 
     private void openCategories(View v) {
         Intent intent = new Intent(HubActivity.this, CategoriesActivity.class);
+        startActivity(intent);
+    }
+
+    private void openPuntenshop(View v) {
+        Intent intent = new Intent(HubActivity.this, PuntenshopActivity.class);
         startActivity(intent);
     }
 }

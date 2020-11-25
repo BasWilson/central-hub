@@ -98,14 +98,14 @@
             android:textSize="18sp"
             android:textStyle="normal" />
 
-        <Button
+        <Button android:fontFamily="sans-serif"
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/blue"
             android:text="Vraag account gegevens op" />
 
-        <Button
+        <Button android:fontFamily="sans-serif"
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -118,7 +118,7 @@
             android:gravity="bottom"
             android:orientation="vertical">
 
-            <Button
+            <Button android:fontFamily="sans-serif"
                 android:id="@+id/logoutButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

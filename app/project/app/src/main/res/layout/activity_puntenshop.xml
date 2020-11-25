@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CategoriesActivity">
+    tools:context=".PuntenshopActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,9 +23,31 @@
             android:paddingTop="30sp"
             android:paddingEnd="20sp"
             android:paddingBottom="20sp"
-            android:text="Categorieén"
+            android:text="Puntenshop"
             android:textColor="@android:color/black"
             android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0sp"
+            android:paddingBottom="0sp"
+            android:text="Hoe ga jij je studentenpunten spenderen?"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5sp"
+            android:paddingBottom="20sp"
+            android:text="666 ‍🎓"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
@@ -34,7 +56,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="0sp"
             android:paddingBottom="0sp"
-            android:text="Zoeken"
+            android:text="Hoe ga jij je studentenpunten spenderen?"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="normal" />
@@ -44,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Waar ben je naar op zoek?"
+            android:hint="What's your deepest, darkest desire?"
             android:inputType="textPersonName" />
 
         <ScrollView
@@ -62,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="20sp"
                     android:paddingBottom="5sp"
-                    android:text="School"
+                    android:text="Coupons"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
                     android:textStyle="normal" />
@@ -76,7 +98,8 @@
                     android:shadowRadius="0"
                     android:padding="15sp"
                     android:textColor="@color/black"
-                    android:text="ICT Updates" />
+                    android:lineHeight="30sp"
+                    android:text="Gratis Cheeseburger\n50 🎓" />
                 <Button android:fontFamily="sans-serif"
                     android:id="@+id/button1"
                     android:layout_width="match_parent"
@@ -86,7 +109,8 @@
                     android:shadowRadius="0"
                     android:padding="15sp"
                     android:textColor="@color/black"
-                    android:text="Business Updates" />
+                    android:lineHeight="30sp"
+                    android:text="5 euro korting bij Bruna\n200 🎓" />
                 <Button android:fontFamily="sans-serif"
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
@@ -96,18 +120,8 @@
                     android:shadowRadius="0"
                     android:padding="15sp"
                     android:textColor="@color/black"
-                    android:text="Zorg Updates" />
-
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="20sp"
-                    android:paddingBottom="5sp"
-                    android:text="Self improvement"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="normal" />
+                    android:lineHeight="30sp"
+                    android:text="1 jaar gratis studeren \n1 000 000 🎓" />
                 <Button android:fontFamily="sans-serif"
                     android:id="@+id/button4"
                     android:layout_width="match_parent"
@@ -117,68 +131,9 @@
                     android:shadowRadius="0"
                     android:padding="15sp"
                     android:textColor="@color/black"
-                    android:text="Healthy diet on a budget" />
-                <Button android:fontFamily="sans-serif"
-                    android:id="@+id/button5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/gray"
-                    android:textAlignment="textStart"
-                    android:shadowRadius="0"
-                    android:padding="15sp"
-                    android:textColor="@color/black"
-                    android:text="Exercises" />
-                <Button android:fontFamily="sans-serif"
-                    android:id="@+id/button6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/gray"
-                    android:textAlignment="textStart"
-                    android:shadowRadius="0"
-                    android:padding="15sp"
-                    android:textColor="@color/black"
-                    android:text="Planning" />
-                <Button android:fontFamily="sans-serif"
-                    android:id="@+id/button3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/gray"
-                    android:textAlignment="textStart"
-                    android:shadowRadius="0"
-                    android:padding="15sp"
-                    android:textColor="@color/black"
-                    android:text="Fun times" />
+                    android:lineHeight="30sp"
+                    android:text="Ome DUO laat je schuld verdwijnen\n10 000 000 🎓" />
 
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="20sp"
-                    android:paddingBottom="5sp"
-                    android:text="Other"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="normal" />
-                <Button android:fontFamily="sans-serif"
-                    android:id="@+id/button7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/gray"
-                    android:textAlignment="textStart"
-                    android:shadowRadius="0"
-                    android:padding="15sp"
-                    android:textColor="@color/black"
-                    android:text="Don't do drugs kids" />
-                <Button android:fontFamily="sans-serif"
-                    android:id="@+id/button8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/gray"
-                    android:textAlignment="textStart"
-                    android:shadowRadius="0"
-                    android:padding="15sp"
-                    android:textColor="@color/black"
-                    android:text="Stop doing drugs" />
             </LinearLayout>
         </ScrollView>
 

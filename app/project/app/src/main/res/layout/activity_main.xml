@@ -80,7 +80,7 @@
                 android:textSize="18sp"
                 android:textStyle="normal" />
 
-            <Button
+            <Button android:fontFamily="sans-serif"
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
