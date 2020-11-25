@@ -7,27 +7,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
-    Button loginButton;
+    Button logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profile);
         getSupportActionBar().hide();
         setup();
     }
 
     private void setup() {
-        loginButton = (Button)findViewById(R.id.loginButton);
-        if (loginButton != null) {
-            loginButton.setOnClickListener(this::onClick);
+        logoutButton = (Button)findViewById(R.id.logoutButton);
+        if (logoutButton != null) {
+            logoutButton.setOnClickListener(this::onClick);
         }
     }
 
     private void onClick(View v) {
-        Intent intent = new Intent(MainActivity.this, HubActivity.class);
+        Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }
