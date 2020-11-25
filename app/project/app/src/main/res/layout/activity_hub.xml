@@ -111,6 +111,14 @@
             android:backgroundTint="@color/gray"
             android:textColor="@color/black"
             android:text="Puntenshop" />
+
+        <Button android:fontFamily="sans-serif"
+            android:id="@+id/hotspotsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray"
+            android:textColor="@color/black"
+            android:text="Hotspots" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

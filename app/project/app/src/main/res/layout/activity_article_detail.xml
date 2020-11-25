@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ArticleDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        android:paddingBottom="20sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30sp"
+            android:paddingEnd="20sp"
+            android:paddingBottom="20sp"
+            android:text="Geldzaken"
+            android:textColor="@android:color/black"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0sp"
+            android:paddingEnd="20sp"
+            android:paddingBottom="20sp"
+            android:text="Ome Duo gift elke student die niet lui is deze maand 10.000 euro!"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lacus sem. In accumsan sollicitudin convallis. Ut libero ante, suscipit quis est vel, posuere fermentum purus. Suspendisse potenti. Fusce suscipit velit mauris, quis pellentesque urna rhoncus quis. Nulla elementum dui dignissim nulla commodo convallis. Suspendisse diam arcu, placerat sit amet est non, bibendum consequat est. Maecenas ac tellus sit amet nibh sollicitudin ullamcorper. Etiam id lacus tincidunt, fringilla erat eget, consectetur velit. In diam justo, semper sit amet nulla quis, consectetur finibus ipsum. Ut commodo ipsum eu nunc aliquam tempor. Aliquam eleifend neque non nunc vehicula, tempus tristique augue finibus. Ut fermentum, lorem nec vehicula bibendum, odio odio iaculis velit, vitae consectetur leo leo a nulla. In molestie ligula ac hendrerit faucibus."
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button android:fontFamily="sans-serif"
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blue"
+                android:text="Delen" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
