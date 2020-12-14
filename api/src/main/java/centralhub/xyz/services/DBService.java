@@ -14,6 +14,7 @@ import centralhub.xyz.models.User;
 public class DBService {
 
     private static Logger logger = Logger.getLogger(DBService.class.getName());
+    private static final String CONN_URL = "jdbc:sqlite:centralhub.db";
 
     private DBService() {
         try {
@@ -28,8 +29,7 @@ public class DBService {
 
         // Connect to the database, in this case locally with sqlite
         // Also create the statement
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:centralhub.db");
-                Statement statement = conn.createStatement()) {
+        try (Connection conn = DriverManager.getConnection(CONN_URL); Statement statement = conn.createStatement()) {
 
             // Write the statement and execute it
             statement.execute("CREATE TABLE IF NOT EXISTS users (".concat("userId text PRIMARY KEY,")
@@ -46,7 +46,7 @@ public class DBService {
     public static Boolean createUser(User user) {
         // Connect to the database, in this case locally with sqlite
         // Also create the statement
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:centralhub.db");
+        try (Connection conn = DriverManager.getConnection(CONN_URL);
                 PreparedStatement statement = conn.prepareStatement(
                         "INSERT INTO users(userId, email, name, school, lang, password) VALUES(?,?,?,?,?,?)")) {
 
@@ -69,7 +69,7 @@ public class DBService {
     public static User findUserByEmail(String email) {
         // Connect to the database, in this case locally with sqlite
         // Also create the statement
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:centralhub.db");
+        try (Connection conn = DriverManager.getConnection(CONN_URL);
                 PreparedStatement statement = conn.prepareStatement("SELECT * FROM users WHERE email = ?")) {
 
             // Write the statement and execute it
@@ -90,7 +90,7 @@ public class DBService {
     public static User findUserByUserId(String userId) {
         // Connect to the database, in this case locally with sqlite
         // Also create the statement
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:centralhub.db");
+        try (Connection conn = DriverManager.getConnection(CONN_URL);
                 PreparedStatement statement = conn.prepareStatement("SELECT * FROM users WHERE userId = ?")) {
 
             // Write the statement and execute it
