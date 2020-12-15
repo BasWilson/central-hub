@@ -17,17 +17,16 @@
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/headerText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="30sp"
             android:paddingEnd="20sp"
             android:paddingBottom="20sp"
-            android:text="Login"
+            android:text="Registreer"
             android:textColor="@android:color/black"
             android:textSize="48sp"
-            android:textStyle="bold"
-            tools:text="Login" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView1"
@@ -42,23 +41,51 @@
             android:textStyle="normal" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/subHeaderText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="100sp"
             android:paddingEnd="20sp"
             android:paddingBottom="20sp"
-            android:text="Om gebruik te kunnen maken van deze app moet je inloggen met je school account."
+            android:text="Om gebruik te kunnen maken van deze app moet je een account bij ons maken"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="normal" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:paddingTop="20sp"
+            android:inputType="textPersonName"
+            android:hint="Je volledige naam" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:paddingTop="20sp"
+            android:inputType="textEmailAddress"
+            android:hint="Je school e-mailadres" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:paddingTop="20sp"
+            android:inputType="textPassword"
+            android:hint="Kies een wachtwoord" />
+
+        <EditText
+            android:id="@+id/editTextSchool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:paddingTop="20sp"
             android:inputType="textPersonName"
             android:hint="Naam van je school" />
 
@@ -71,7 +98,7 @@
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="37dp"
                 android:paddingTop="100sp"
                 android:paddingBottom="10sp"
                 android:text="Door in te loggen ga je akkoord met onze Privacy voorwaarden"
@@ -81,11 +108,19 @@
                 android:textStyle="normal" />
 
             <Button android:fontFamily="sans-serif"
-                android:id="@+id/loginButton"
+                android:id="@+id/submitButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/blue"
-                android:text="Log in" />
+                android:text="Registreer" />
+
+            <Button android:fontFamily="sans-serif"
+                android:id="@+id/switchButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:text="Ik heb al een account" />
         </LinearLayout>
 
     </LinearLayout>
