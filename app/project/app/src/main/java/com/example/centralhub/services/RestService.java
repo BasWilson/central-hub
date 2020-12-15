@@ -24,7 +24,7 @@ import java.io.UnsupportedEncodingException;
 
 public class RestService {
 
-    public static void sendRequest(Context ctx, String url, JSONObject jsonBody, final VolleyCallback callback) {
+    public static void sendPostRequest(Context ctx, String url, JSONObject jsonBody, final VolleyCallback callback) {
         RequestQueue requestQueue = Volley.newRequestQueue(ctx);
         final String mRequestBody = jsonBody.toString();
 

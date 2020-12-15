@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             // switch schermpje
             Intent intent = new Intent(MainActivity.this, HubActivity.class);
             startActivity(intent);
+            finish();
         } else {
             // Nog niet ingelogd
             setContentView(R.layout.activity_main);
@@ -142,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                // Roep sign in method die rqeuest naar de API maakt
+                // Roep sign in method die request naar de API maakt
                 signIn(jsonBody);
             }
 
@@ -152,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void signIn(JSONObject jsonBody) {
-        RestService.sendRequest(this, "http://10.0.2.2:8080/auth/signin", jsonBody, new VolleyCallback() {
+        RestService.sendPostRequest(this, "http://10.0.2.2:8080/auth/signin", jsonBody, new VolleyCallback() {
             @Override
             public void onSuccess(JSONObject jsonObject) {
                 try {
@@ -164,23 +165,24 @@ public class MainActivity extends AppCompatActivity {
                 // switch schermpje
                 Intent intent = new Intent(MainActivity.this, HubActivity.class);
                 startActivity(intent);
+                finish();
             }
 
             @Override
             public void onError() {
-                Toast.makeText(getBaseContext(), "Dit e-mailadres is al in gebruik of het is geen Hogeschool e-mailadress", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "Kan geen gebruiker vinden met deze gegevens", Toast.LENGTH_LONG).show();
             }
         });
     }
 
     private void register(JSONObject jsonBody) {
-        RestService.sendRequest(this, "http://10.0.2.2:8080/users", jsonBody, new VolleyCallback() {
+        RestService.sendPostRequest(this, "http://10.0.2.2:8080/users", jsonBody, new VolleyCallback() {
             @Override
             public void onSuccess(JSONObject jsonObject) {
-                // Account is gemaakt, verstuur gelijk zonder inderactie de login request er achter aan zodat we
+                // Account is gemaakt, verstuur gelijk zonder inderactie de login request er achteraan zodat we
                 // een token krijgen en kunnen advancen naar t volgende scherm
                 try {
-                    // Maak een nieuw json object met de email en ww uit de vorige
+                    // Maak een nieuw json object met de email en ww uit het vorige object
                     JSONObject signInObj = new JSONObject();
                     signInObj.put("email", jsonBody.getString("email"));
                     signInObj.put("password", jsonBody.getString("password"));
@@ -194,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onError() {
-                Toast.makeText(getBaseContext(), "Dit e-mailadres is al in gebruik of het is geen Hogeschool e-mailadress", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "Dit e-mailadres is al in gebruik of het is geen Hogeschool e-mailadres", Toast.LENGTH_LONG).show();
             }
         });
     }
