@@ -42,8 +42,8 @@ class AccountService {
      * @param email 
      * @param password 
      */
-    register = async (name: string, email: string, password: string, userStore?: UserStore) => {
-        const req = createRequest(authRequests.register, { name, email, password });
+    register = async (email: string, password: string, userStore?: UserStore) => {
+        const req = createRequest(authRequests.register, { email, password });
         const res = await jwtRequests.que(req);
         if (!res || res.error) {
             return res;

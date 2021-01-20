@@ -24,34 +24,40 @@ export const AuthScreen = observer(() => {
         window.location.reload();
     }
 
-    if (mode === "login") {
-        return (
-            <Page pageName={"Login"}>
-                <GlobalSmallHeading>Welkom bij dé Centrale Hub voor studenten.</GlobalSmallHeading>
-                <GlobalDivider />
-                <p>Om gebruik te kunnen maken van deze app moet je inloggen met je school account.</p>
-                <GlobalDivider />
-                <GlobalInput onChange={(e) => setUsername(e.target.value)} placeholder="School e-mail" type="email" />
-                <GlobalInput style={{ marginTop: 10 }} onChange={(e) => setPassword(e.target.value)} placeholder="Wachtwoord" type="password" />
-                <GlobalButton style={{ marginTop: 10 }} onClick={signIn}>Login</GlobalButton>
-                <GlobalButton style={{ marginTop: 10, background: "none", color: "black" }} onClick={() => { setMode("register") }}>Ik heb nog geen account</GlobalButton>
-            </Page>
-        )
-    } else {
-        return (
-            <Page pageName={"Registreer"}>
-                <GlobalSmallHeading>Welkom bij dé Centrale Hub voor studenten.</GlobalSmallHeading>
-                <GlobalDivider />
-                <p>Om gebruik te kunnen maken van deze app moet je inloggen met je school account.</p>
-                <GlobalDivider />
-                <GlobalInput onChange={(e) => setUsername(e.target.value)} placeholder="School e-mail" type="email" />
-                <GlobalInput style={{ marginTop: 10 }} onChange={(e) => setUsername(e.target.value)} placeholder="Je naam" type="name" />
-                <GlobalInput style={{ marginTop: 10 }} onChange={(e) => setPassword(e.target.value)} placeholder="Wachtwoord" type="password" />
-                <GlobalButton style={{ marginTop: 10 }} onClick={signIn}>Registreer</GlobalButton>
-                <GlobalButton style={{ marginTop: 10, background: "none", color: "black" }} onClick={() => { setMode("login") }}>Ik heb al een account</GlobalButton>
-            </Page>
-        )
+    const register = async () => {
+        if (!username || !password) return;
+
+        const res = await accountService.register(username, password, userStore);
+
+        if (res.error) return createAlert("Dit email adres is al in gebruik", "error");
+
+        window.location.reload();
     }
+
+    return (
+        <Page pageName={mode === "login" ? "Login" : "Registreer"}>
+            <GlobalSmallHeading>Welkom bij dé Centrale Hub voor studenten.</GlobalSmallHeading>
+            <GlobalDivider />
+            <p>Om gebruik te kunnen maken van deze app moet je inloggen met je school account.</p>
+            <GlobalDivider />
+            <GlobalInput onChange={(e) => setUsername(e.target.value)} placeholder="School e-mail" type="email" />
+            <GlobalInput style={{ marginTop: 10 }} onChange={(e) => setPassword(e.target.value)} placeholder="Wachtwoord" type="password" />
+            {
+                mode === "login" ?
+                    <>
+                        <GlobalButton style={{ marginTop: 10 }} onClick={signIn}>Login</GlobalButton>
+                        <GlobalButton style={{ marginTop: 10, background: "none", color: "black" }} onClick={() => { setMode("register") }}>Ik heb nog geen account</GlobalButton>
+                    </>
+                    :
+                    <>
+                        <GlobalButton style={{ marginTop: 10 }} onClick={register}>Registreer</GlobalButton>
+                        <GlobalButton style={{ marginTop: 10, background: "none", color: "black" }} onClick={() => { setMode("login") }}>Ik heb al een account</GlobalButton>
+                    </>
+            }
+
+        </Page>
+    )
+
 
 
 })
