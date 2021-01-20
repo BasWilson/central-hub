@@ -1,13 +1,9 @@
-import { getCurrentEnv } from "./env.emulator";
-
 export const apiEndPoint = () => {
-    switch (getCurrentEnv()) {
-        case "local":
+    switch (window.location.origin) {
+        case "http://localhost:3001":
             return "http://localhost:3000";
-        case "staging":
+        case "https://willywonka.dev":
             return "https://api-dev.hvh.gg";
-        case "production":
-            return "https://api.hvh.gg";
         default:
             return "http://localhost:3000";
     }
