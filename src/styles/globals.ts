@@ -37,6 +37,7 @@ export const GlobalInput = styled.input`
     color: black;
     transition: 0.2s ease-in-out all;
     width: 100%;
+    user-select: initial;
 
     &::placeholder {
         color: gray;
