@@ -28,7 +28,7 @@ export const Profile = observer(() => {
             <GlobalDivider />
             <GlobalButton onClick={async () => {
                 const req = createRequest(usersRequests.setPoints);
-                req.path += "/" + userStore.user.userId + "/" + (1000).toString() + "/add";
+                req.path += "/" + userStore.user.profile.username + "/" + (1000).toString() + "/add";
                 await jwtRequests.que(req);
                 await accountService.authenticate(userStore);
             }}>Gimme 1000 test points</GlobalButton>

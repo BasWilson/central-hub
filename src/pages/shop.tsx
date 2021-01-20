@@ -54,7 +54,7 @@ export const Shop = observer(() => {
                                     if ((userStore.user.profile.points - item.amount < 0)) return alert("Je hebt niet genoeg punten!");
 
                                     const req = createRequest(usersRequests.setPoints);
-                                    req.path += "/" + userStore.user.userId + "/" + (userStore.user.profile.points - item.amount).toString();
+                                    req.path += "/" + userStore.user.profile.username + "/" + (userStore.user.profile.points - item.amount).toString();
 
                                     await jwtRequests.que(req);
                                     await accountService.authenticate(userStore);
