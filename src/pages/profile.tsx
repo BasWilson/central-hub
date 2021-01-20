@@ -32,6 +32,11 @@ export const Profile = observer(() => {
                 await jwtRequests.que(req);
                 await accountService.authenticate(userStore);
             }}>Gimme 1000 test points</GlobalButton>
+            <GlobalDivider />
+            <GlobalButton onClick={async () => {
+                await accountService.authenticate(userStore);
+            }}>Ververs</GlobalButton>
+            <GlobalDivider />
             <GlobalButton style={{ background: "none", color: "red" }} onClick={accountService.signout}>Log uit</GlobalButton>
 
         </Page>
